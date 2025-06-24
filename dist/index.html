@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seiwa Hills — Stay in the Woods, Feel Seiwa</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Playfair Display + Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Alpine.js -->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <style>
+    body { font-family: 'Noto Sans JP', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="text-[#3d6b4c] bg-[#f5efe2]">
+  <!-- HERO -->
+  <section id="hero" class="relative h-screen w-full flex items-center justify-center">
+    <img src="assets/images/hero.jpg" alt="里山空撮" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="relative z-10 text-center text-white px-4" x-data>
+      <svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60" class="mx-auto mb-4">
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display, serif" font-size="28" fill="white">Seiwa Hills</text>
+      </svg>
+      <h1 class="text-4xl md:text-6xl mb-4 tracking-wide">Stay in the Woods, Feel Seiwa.</h1>
+      <p class="mb-8 text-lg md:text-2xl">里山をまるごと味わう滞在拠点『Seiwa Hills』へようこそ。</p>
+      <a href="#concept" class="bg-[#f6a21a] text-[#3d6b4c] px-6 py-3 rounded-full font-bold hover:bg-[#ffd27c] transition">もっと詳しく</a>
+    </div>
+    <div class="absolute inset-0 bg-black/40"></div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section id="concept" class="py-16" x-data="reveal()">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+      <img src="assets/images/concept.jpg" alt="コンセプト写真" class="w-full md:w-1/2 rounded-lg shadow-lg" />
+      <div class="w-full md:w-1/2" x-ref="content">
+        <h2 class="text-3xl md:text-4xl mb-4 font-bold">集う・過ごす・清和を感じる。</h2>
+        <p class="text-lg leading-relaxed">
+          東京から車で 90 分。清和地区の築 80 年古民家をみんなで DIY し、「集う・過ごす・清和を感じる」拠点を目指しています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEIWA EXPERIENCE -->
+  <section id="experience" class="py-16 bg-[#e9e3d4]" x-data="reveal()">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">Seiwa Experience</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-lg shadow-md p-8 flex flex-col items-center" x-ref="content">
+          <img src="assets/images/experience_fire.jpg" alt="焚き火トーク" class="w-full h-48 object-cover mb-4 rounded-lg" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#3d6b4c] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+          </svg>
+          <h3 class="text-xl font-semibold mb-2">焚き火トーク</h3>
+          <p class="mb-4">夜の焚き火を囲んで、語らいと星空を楽しむひととき。</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow-md p-8 flex flex-col items-center" x-ref="content">
+          <img src="assets/images/experience_workshop.jpg" alt="DIY & クラフトワークショップ" class="w-full h-48 object-cover mb-4 rounded-lg" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#3d6b4c] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
+          </svg>
+          <h3 class="text-xl font-semibold mb-2">DIY & クラフトワークショップ</h3>
+          <p class="mb-4">古民家のリノベや木工クラフトを体験するワークショップ。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL STORIES -->
+  <section id="stories" class="py-16" x-data="reveal()">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">Local Stories</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden" x-ref="content">
+          <img src="assets/images/story_1.jpg" alt="Story 1" class="w-full h-48 object-cover" />
+          <div class="p-6 text-left">
+            <h3 class="text-xl font-semibold mb-2">地元林業家の想い</h3>
+            <p class="text-sm">清和の森を守り育てる林業家が語る、持続可能な未来。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden" x-ref="content">
+          <img src="assets/images/story_2.jpg" alt="Story 2" class="w-full h-48 object-cover" />
+          <div class="p-6 text-left">
+            <h3 class="text-xl font-semibold mb-2">移住クリエイターの声</h3>
+            <p class="text-sm">都心から移住し地域に根ざすクリエイターの日常。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden" x-ref="content">
+          <img src="assets/images/story_3.jpg" alt="Story 3" class="w-full h-48 object-cover" />
+          <div class="p-6 text-left">
+            <h3 class="text-xl font-semibold mb-2">里山の恵みを味わう</h3>
+            <p class="text-sm">季節ごとの山菜や野菜で紡ぐ、里山の食卓。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-16 bg-[#e9e3d4]" x-data="galleryLightbox()">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">Gallery</h2>
+      <div class="columns-1 sm:columns-2 md:columns-3 gap-4 [column-fill:_balance]">
+        <!-- Repeat for 8 images -->
+        <template x-for="i in 6" :key="i">
+          <img :src="`assets/images/gallery_${i}.jpg`" :alt="`Gallery ${i}`" class="mb-4 rounded-lg cursor-pointer hover:opacity-80 transition" @click="open($event.target.src)" />
+        </template>
+      </div>
+      <!-- Lightbox -->
+      <div x-show="show" class="fixed inset-0 bg-black/80 flex items-center justify-center px-4" x-transition>
+        <img :src="imgSrc" alt="lightbox" class="max-h-[80vh] rounded-lg shadow-lg" />
+        <button class="absolute top-4 right-4 text-white text-4xl" @click="show=false">&times;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section id="access" class="py-16" x-data="reveal()">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Access</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <iframe class="w-full h-80 rounded-lg" src="https://www.google.com/maps?q=35.217,140.079&hl=ja&z=14&output=embed"></iframe>
+        <div class="flex flex-col gap-4 justify-center" x-ref="content">
+          <p><strong>住所：</strong> 千葉県君津市清和地区&nbsp;※詳細は予約後にご案内</p>
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 bg-[#e9e3d4]" x-data="reveal()">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeiTugEjmOKB6CqUqYls7uJTLVCG-03DO74YyGvpeasld-SIw/viewform?usp=header" target="_blank" class="hover:text-[#f6a21a]">お問い合わせ</a></h2>
+      <div class="flex justify-center" x-ref="content">
+        <!-- Google Form iframe removed as per request -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#3d6b4c] text-[#f5efe2] py-6">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <p class="font-bold text-lg">Seiwa Hills Project</p>
+      <!-- SNS links removed -->
+        
+        
+        
+      <p class="text-sm">© 2025 Seiwa Hills Project</p>
+    </div>
+    <div class="text-center text-xs mt-2">本サイトは WindSurf で制作し GitHub Pages でホスティングしています。</div>
+  </footer>
+
+  <!-- Alpine helpers -->
+  <script>
+    // simple intersection-based reveal
+    function reveal() {
+      return {
+        init() {
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          this.$el.querySelectorAll('[x-ref=content]').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-6', 'transition', 'duration-700');
+            observer.observe(el);
+          });
+        }
+      }
+    }
+
+    // lightbox controller
+    function galleryLightbox() {
+      return {
+        show: false,
+        imgSrc: '',
+        open(src) {
+          this.imgSrc = src; this.show = true;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
