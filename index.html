@@ -15,12 +15,18 @@
   <style>
     body { font-family: 'Noto Sans JP', sans-serif; }
     h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    /* Ken Burns hero animation */
+    .hero-img { animation: kenburns 30s ease-out infinite alternate; }
+    @keyframes kenburns {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); }
+    }
   </style>
 </head>
 <body class="text-[#3d6b4c] bg-[#f5efe2]">
   <!-- HERO -->
   <section id="hero" class="relative h-screen w-full flex items-center justify-center">
-    <img src="assets/images/hero.jpg" alt="里山空撮" class="absolute inset-0 w-full h-full object-cover" />
+    <img src="assets/images/hero.jpg" alt="里山空撮" class="absolute inset-0 w-full h-full object-cover hero-img" />
     <div class="relative z-10 text-center text-white px-4" x-data>
       <svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60" class="mx-auto mb-4">
         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display, serif" font-size="28" fill="white">Seiwa Hills</text>
@@ -30,6 +36,7 @@
       <a href="#concept" class="bg-[#f6a21a] text-[#3d6b4c] px-6 py-3 rounded-full font-bold hover:bg-[#ffd27c] transition">もっと詳しく</a>
     </div>
     <div class="absolute inset-0 bg-black/40"></div>
+  <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg"><path fill="#f5efe2" d="M0 0h1440v120H0z"/></svg>
   </section>
 
   <!-- CONCEPT -->
@@ -51,7 +58,7 @@
       <h2 class="text-3xl md:text-4xl font-bold mb-12">Seiwa Experience</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Card 1 -->
-        <div class="bg-white rounded-lg shadow-md p-8 flex flex-col items-center" x-ref="content">
+        <div class="bg-white/30 backdrop-blur-lg rounded-xl shadow-lg ring-1 ring-white/40 p-8 flex flex-col items-center" x-ref="content">
           <img src="assets/images/experience_fire.jpg" alt="焚き火トーク" class="w-full h-48 object-cover mb-4 rounded-lg" />
           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#3d6b4c] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
@@ -60,7 +67,7 @@
           <p class="mb-4">夜の焚き火を囲んで、語らいと星空を楽しむひととき。</p>
         </div>
         <!-- Card 2 -->
-        <div class="bg-white rounded-lg shadow-md p-8 flex flex-col items-center" x-ref="content">
+        <div class="bg-white/30 backdrop-blur-lg rounded-xl shadow-lg ring-1 ring-white/40 p-8 flex flex-col items-center" x-ref="content">
           <img src="assets/images/experience_workshop.jpg" alt="DIY & クラフトワークショップ" class="w-full h-48 object-cover mb-4 rounded-lg" />
           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#3d6b4c] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
@@ -77,21 +84,21 @@
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-12">Local Stories</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-md overflow-hidden" x-ref="content">
+        <div class="bg-white/30 backdrop-blur-lg rounded-xl shadow-lg ring-1 ring-white/40 overflow-hidden" x-ref="content">
           <img src="assets/images/story_1.jpg" alt="Story 1" class="w-full h-48 object-cover" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-semibold mb-2">地元林業家の想い</h3>
             <p class="text-sm">清和の森を守り育てる林業家が語る、持続可能な未来。</p>
           </div>
         </div>
-        <div class="bg-white rounded-lg shadow-md overflow-hidden" x-ref="content">
+        <div class="bg-white/30 backdrop-blur-lg rounded-xl shadow-lg ring-1 ring-white/40 overflow-hidden" x-ref="content">
           <img src="assets/images/story_2.jpg" alt="Story 2" class="w-full h-48 object-cover" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-semibold mb-2">移住クリエイターの声</h3>
             <p class="text-sm">都心から移住し地域に根ざすクリエイターの日常。</p>
           </div>
         </div>
-        <div class="bg-white rounded-lg shadow-md overflow-hidden" x-ref="content">
+        <div class="bg-white/30 backdrop-blur-lg rounded-xl shadow-lg ring-1 ring-white/40 overflow-hidden" x-ref="content">
           <img src="assets/images/story_3.jpg" alt="Story 3" class="w-full h-48 object-cover" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-semibold mb-2">里山の恵みを味わう</h3>
